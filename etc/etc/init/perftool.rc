@@ -1,0 +1,60 @@
+## Permissions to allow system-wide tracing to the kernel trace buffer.                                                                     
+##
+on property:debug.sysctl.extra_free_kbytes=*
+    write /proc/sys/vm/extra_free_kbytes ${debug.sysctl.extra_free_kbytes}
+
+on property:debug.sysctl.swappiness=*
+    write /proc/sys/vm/swappiness ${debug.sysctl.swappiness}
+
+on property:debug.sysctl.compact_memory=*
+    write /proc/sys/vm/compact_memory ${debug.sysctl.compact_memory}
+
+on property:debug.sysctl.block_dump=*
+    write /proc/sys/vm/block_dump ${debug.sysctl.block_dump}
+
+on property:debug.sysctl.dirty_background_ratio=*
+    write /proc/sys/vm/dirty_background_ratio ${debug.sysctl.dirty_background_ratio}
+
+on property:debug.sysctl.dirty_background_bytes=*
+    write /proc/sys/vm/dirty_background_bytes ${debug.sysctl.dirty_background_bytes}
+
+on property:debug.sysctl.dirty_bytes=*
+    write /proc/sys/vm/dirty_bytes ${debug.sysctl.dirty_bytes}
+
+on property:debug.sysctl.dirty_ratio=*
+    write /proc/sys/vm/dirty_ratio ${debug.sysctl.dirty_ratio}
+
+on property:debug.sysctl.dirty_writeback_centisecs=*
+    write /proc/sys/vm/dirty_writeback_centisecs ${debug.sysctl.dirty_writeback_centisecs}
+
+on property:debug.sysctl.dirtytime_expire_seconds=*
+    write /proc/sys/vm/dirtytime_expire_seconds ${debug.sysctl.dirtytime_expire_seconds}
+
+on property:debug.sysctl.drop_caches=*
+    write /proc/sys/vm/drop_caches ${debug.sysctl.drop_caches}
+
+on property:debug.sysctl.extfrag_threshold=*
+    write /proc/sys/vm/extfrag_threshold ${debug.sysctl.extfrag_threshold}
+
+on property:debug.sysctl.page_cluster=*
+    write /proc/sys/vm/page-cluster ${debug.sysctl.page_cluster}
+
+on property:debug.perftool.smartmode=1
+    write ${debug.perftool.path} ${debug.perftool.value}
+
+on property:debug.perftool.smartchown=1
+    chown ${debug.perftool.chown} ${debug.perftool.path}
+
+on property:debug.perftool.smartchmod=1
+    chmod ${debug.perftool.chmod} ${debug.perftool.path}
+
+on property:debug.perftool.smartmkdir=1
+    mkdir ${debug.perftool.path} ${debug.perftool.chmod} ${debug.perftool.chown}
+
+on property:debug.perftool.smartrmdir=1
+	rmdir ${debug.perftool.path}
+
+on property:debug.perftool.smartrm=1
+	rm ${debug.perftool.path}
+
+

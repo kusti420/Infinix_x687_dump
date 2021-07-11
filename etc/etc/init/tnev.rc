@@ -1,0 +1,12 @@
+service tnevservice /vendor/bin/hw/vendor.tne@1.0-service
+    class core
+    user root
+    group root
+    onrestart restart tne
+    disabled
+
+on property:dev.tne.mode=1
+    start tnevservice
+
+on property:dev.tne.mode=0
+    stop tnevservice
